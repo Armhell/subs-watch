@@ -1,0 +1,7 @@
+targets/
+targets.txt
+longtail_*.txt
+state.tar.gz
+delta_*.json
+__pycache__/
+*.pyc

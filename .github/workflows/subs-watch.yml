@@ -1,0 +1,134 @@
+name: subs-watch
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # full sweep (all tiers)
+    - cron: '30 14 * * *'  # second full sweep
+  workflow_dispatch: {}     # manual "Run workflow" button
+
+permissions:
+  contents: write           # commit encrypted state back
+
+concurrency:
+  group: subs-watch
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { tier: daily, file: targets.txt }
+          - { tier: lt0,   file: longtail_0.txt }
+          - { tier: lt1,   file: longtail_1.txt }
+          - { tier: lt2,   file: longtail_2.txt }
+          - { tier: lt3,   file: longtail_3.txt }
+          - { tier: lt4,   file: longtail_4.txt }
+          - { tier: lt5,   file: longtail_5.txt }
+          - { tier: lt6,   file: longtail_6.txt }
+          - { tier: lt7,   file: longtail_7.txt }
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
+          go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+          go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+          echo "$HOME/go/bin" >> "$GITHUB_PATH"
+
+      - name: Configure subfinder providers
+        env:
+          CHAOS_KEY: ${{ secrets.CHAOS_KEY }}
+          PDCP_KEY: ${{ secrets.PDCP_KEY }}
+        run: |
+          mkdir -p "$HOME/.config/subfinder"
+          : > "$HOME/.config/subfinder/provider-config.yaml"
+          if [ -n "$CHAOS_KEY" ]; then
+            echo "chaos: [$CHAOS_KEY]" >> "$HOME/.config/subfinder/provider-config.yaml"
+          fi
+          if [ -n "$PDCP_KEY" ]; then
+            echo "pdcp: [$PDCP_KEY]" >> "$HOME/.config/subfinder/provider-config.yaml"
+          fi
+
+      - name: Decrypt state
+        env:
+          AGE_PRIVATE_KEY: ${{ secrets.AGE_PRIVATE_KEY }}
+        run: |
+          printenv AGE_PRIVATE_KEY > key.txt
+          age -d -i key.txt -o state.tar.gz state.tar.gz.enc
+          tar -xzf state.tar.gz
+          rm -f key.txt state.tar.gz
+
+      - name: Run monitor cycle (${{ matrix.tier }})
+        env:
+          # Telegram notify is handled by the merge job (one combined digest)
+          TELEGRAM_BOT_TOKEN: ""
+          TELEGRAM_CHAT_ID: ""
+        run: |
+          python3 subs_watch.py run --root . --targets-file ${{ matrix.file }} \
+            --workers 8 --redact --no-md --no-notify \
+            --httpx-cap 150 --job-name ${{ matrix.tier }}
+
+      - name: Upload state artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-${{ matrix.tier }}
+          path: targets/
+          retention-days: 1
+
+  notify-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: scan
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download shard state
+        uses: actions/download-artifact@v4
+        with:
+          pattern: state-*
+          path: artifacts/
+
+      - name: Install age
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
+
+      - name: Merge shards, send one digest, build state
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 merge_state.py --artifacts-root artifacts/ --state-root .
+
+      - name: Encrypt state
+        run: |
+          tar -czf state.tar.gz targets.txt longtail_*.txt targets/ 2>/dev/null \
+            || tar -czf state.tar.gz targets.txt longtail_*.txt
+          age -r "$(cat age_pubkey.txt)" -o state.tar.gz.enc state.tar.gz
+          rm -f state.tar.gz
+
+      - name: Commit encrypted state
+        run: |
+          git config user.name  "subs-watch[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add state.tar.gz.enc
+          if git diff --cached --quiet; then
+            echo "No state changes this run"
+          else
+            git commit -m "subs-watch state $(date -u +%F-%H)"
+            git push
+          fi
