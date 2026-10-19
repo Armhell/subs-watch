@@ -5,3 +5,8 @@ state.tar.gz
 delta_*.json
 __pycache__/
 *.pyc
+.certspotter/
+certspotter_state.tar.gz
+cs.tar.gz
+subs.tar.gz
+key.txt

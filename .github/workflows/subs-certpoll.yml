@@ -1,0 +1,73 @@
+name: subs-certpoll
+
+on:
+  schedule:
+    - cron: '15 */2 * * *'   # every 2h at :15 (offset from subs-watch :30)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: subs-certpoll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install age
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
+
+      - name: Decrypt scope list
+        env:
+          AGE_PRIVATE_KEY: ${{ secrets.AGE_PRIVATE_KEY }}
+        run: |
+          printenv AGE_PRIVATE_KEY > key.txt
+          age -d -i key.txt -o subs.tar.gz state.tar.gz.enc
+          tar -xzf subs.tar.gz targets.txt
+          rm -f key.txt subs.tar.gz
+
+      - name: Decrypt poll state
+        if: hashFiles('certspotter_state.tar.gz.enc') != ''
+        env:
+          AGE_PRIVATE_KEY: ${{ secrets.AGE_PRIVATE_KEY }}
+        run: |
+          printenv AGE_PRIVATE_KEY > key.txt
+          age -d -i key.txt -o cs.tar.gz certspotter_state.tar.gz.enc
+          tar -xzf cs.tar.gz
+          rm -f key.txt cs.tar.gz
+
+      - name: Poll CertSpotter (incremental, cursor-based)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 certspotter_poll.py run --state-root . \
+            --targets-file targets.txt --redact
+
+      - name: Encrypt poll state
+        run: |
+          tar -czf cs.tar.gz .certspotter
+          age -r "$(cat age_pubkey.txt)" -o certspotter_state.tar.gz.enc cs.tar.gz
+          rm -f cs.tar.gz
+
+      - name: Commit poll state
+        run: |
+          git config user.name  "subs-watch[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add certspotter_state.tar.gz.enc
+          if git diff --cached --quiet; then
+            echo "No state changes this run"
+          else
+            git commit -m "certpoll state $(date -u +%F-%H)"
+            git push
+          fi
