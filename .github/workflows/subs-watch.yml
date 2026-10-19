@@ -114,7 +114,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python3 merge_state.py --artifacts-root artifacts/ --state-root .
 
-      # .ai TLD registration feed (free MerkleMap key; no-ops without one)
+      # .ai TLD registration feed — free daily NRD list, no key needed
       - name: Check new .ai registrations
         if: github.event.schedule != '30 14 * * *'
         env:
