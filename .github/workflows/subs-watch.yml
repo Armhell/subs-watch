@@ -114,6 +114,15 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python3 merge_state.py --artifacts-root artifacts/ --state-root .
 
+      # .ai TLD registration feed (free MerkleMap key; no-ops without one)
+      - name: Check new .ai registrations
+        if: github.event.schedule != '30 14 * * *'
+        env:
+          MERKLEMAP_KEY: ${{ secrets.MERKLEMAP_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 ai_registrations_watch.py run --state-root .
+
       - name: Encrypt state
         run: |
           tar -czf state.tar.gz targets.txt longtail_*.txt targets/ 2>/dev/null \
