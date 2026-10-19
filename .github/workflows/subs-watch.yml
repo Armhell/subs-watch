@@ -16,7 +16,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     strategy:
       fail-fast: false
       matrix:
@@ -78,7 +78,7 @@ jobs:
           TELEGRAM_CHAT_ID: ""
         run: |
           python3 subs_watch.py run --root . --targets-file ${{ matrix.file }} \
-            --workers 8 --redact --no-md --no-notify \
+            --workers 12 --redact --no-md --no-notify \
             --httpx-cap 150 --job-name ${{ matrix.tier }}
 
       - name: Upload state artifact
@@ -98,6 +98,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Install python deps
+        run: pip install requests
 
       - name: Download shard state
         uses: actions/download-artifact@v4

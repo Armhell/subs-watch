@@ -193,7 +193,7 @@ def today() -> str:
 
 def days_ago(iso_date: str) -> int:
     try:
-        d = datetime.strptime(iso_date, "%Y-%m-%d")
+        d = datetime.strptime(iso_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
         return (datetime.now(timezone.utc) - d).days
     except ValueError:
         return 999
