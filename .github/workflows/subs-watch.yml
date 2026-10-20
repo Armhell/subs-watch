@@ -150,7 +150,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python3 ai_bb_match.py --state-root . --notify --evidence
+        run: python3 ai_bb_match.py --state-root . --notify --evidence --max-evidence 1300
 
       - name: Encrypt state
         run: |
