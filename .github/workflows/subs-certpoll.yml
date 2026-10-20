@@ -49,9 +49,8 @@ jobs:
           rm -f key.txt cs.tar.gz
 
       - name: Poll crt.sh (incremental, cursor-based)
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        # Certificate alerts are an ops feed, not the BB-program chat.
+        # Keep recording state; Telegram delivery stays disabled.
         run: |
           mkdir -p targets/.certspotter
           python3 ct_certpoll.py run --state-root . \
