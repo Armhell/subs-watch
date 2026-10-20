@@ -71,7 +71,8 @@ def load_tokens() -> None:
             os.environ[key] = value
 
 
-def fetch_text(url: str, *, timeout: int = 30, retries: int = 2) -> str:
+def fetch_text(url: str, *, timeout: int = 30, retries: int = 2,
+               quiet: bool = False) -> str:
     headers = {"User-Agent": "bb-ass-ai-bb-match/1.0 (authorized research)"}
     last: Exception | None = None
     for attempt in range(retries):
@@ -85,7 +86,8 @@ def fetch_text(url: str, *, timeout: int = 30, retries: int = 2) -> str:
             last = exc
             if attempt < retries - 1:
                 continue
-    log(f"fetch failed: {url} ({last})")
+    if not quiet:
+        log(f"fetch failed: {url} ({last})")
     return ""
 
 
@@ -365,7 +367,8 @@ def scan_body(body: str) -> list[tuple[str, str]]:
 
 def evidence_for(domain: str, *, timeout: int = 7) -> tuple[str, list[dict]]:
     ev: list[dict] = []
-    sec = fetch_text(f"https://{domain}/.well-known/security.txt", timeout=timeout, retries=1)
+    sec = fetch_text(f"https://{domain}/.well-known/security.txt",
+                     timeout=timeout, retries=1, quiet=True)
     policy_urls = []
     if sec:
         for line in sec.splitlines():
@@ -376,11 +379,11 @@ def evidence_for(domain: str, *, timeout: int = 7) -> tuple[str, list[dict]]:
                     policy_urls.append(url)
         for kind, detail in scan_body(sec):
             ev.append({"kind": kind, "detail": detail, "where": "security.txt"})
-    home = fetch_text(f"https://{domain}/", timeout=timeout, retries=1)
+    home = fetch_text(f"https://{domain}/", timeout=timeout, retries=1, quiet=True)
     for kind, detail in scan_body(home):
         ev.append({"kind": kind, "detail": detail, "where": "homepage"})
     for url in policy_urls[:2]:
-        body = fetch_text(url, timeout=timeout, retries=1)
+        body = fetch_text(url, timeout=timeout, retries=1, quiet=True)
         for kind, detail in scan_body(body):
             ev.append({"kind": kind, "detail": detail, "where": "policy"})
 
