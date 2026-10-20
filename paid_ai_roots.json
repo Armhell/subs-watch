@@ -1,0 +1,18 @@
+[
+  {
+    "host": "faraday.ai",
+    "platform": "hackerone",
+    "name": "Faraday, Inc.",
+    "url": "https://hackerone.com/faraday_inc",
+    "bounty": "paid",
+    "scope": "faraday.ai"
+  },
+  {
+    "host": "kaleido.ai",
+    "platform": "bugcrowd",
+    "name": "Kaleido",
+    "url": "https://bugcrowd.com/engagements/kaleido",
+    "bounty": "paid",
+    "scope": "kaleido.ai"
+  }
+]

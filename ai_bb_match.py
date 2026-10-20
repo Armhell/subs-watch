@@ -253,6 +253,33 @@ def load_index(scope_dir: str | None) -> dict:
                 else:
                     scope_map[host].append(item)
 
+    # Small curated list for paid .ai roots the arkadiyt index misses
+    # (currently faraday.ai and kaleido.ai). Kept public and minimal.
+    static_path = Path(__file__).with_name("paid_ai_roots.json")
+    if static_path.exists():
+        try:
+            extra = json.loads(static_path.read_text())
+        except json.JSONDecodeError as exc:
+            log(f"paid_ai_roots.json: bad JSON ({exc})")
+            extra = []
+        added = 0
+        for item in extra if isinstance(extra, list) else []:
+            if not isinstance(item, dict):
+                continue
+            host = norm_host(item.get("host"))
+            if not host:
+                continue
+            scope_map[host].append({
+                "platform": str(item.get("platform") or "unknown"),
+                "name": str(item.get("name") or ""),
+                "url": str(item.get("url") or ""),
+                "bounty": str(item.get("bounty") or "unknown"),
+                "scope": str(item.get("scope") or host),
+            })
+            added += 1
+        if added:
+            log(f"static paid .ai scopes: {added}")
+
     # wildcards.txt is broader than the JSON scope files; keep generic
     # wildcard entries when no platform metadata mapped the same suffix.
     for raw in wildcards:
