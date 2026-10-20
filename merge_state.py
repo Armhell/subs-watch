@@ -75,6 +75,15 @@ def main() -> None:
         if src_targets.is_dir():
             merge_tree(src_targets, root / "targets")
             shards += 1
+        # root-level tier files (targets.txt / longtail_*.txt) are identical
+        # across shards — take the first copy seen
+        for tierfile in ("targets.txt", "longtail_0.txt", "longtail_1.txt",
+                         "longtail_2.txt", "longtail_3.txt", "longtail_4.txt",
+                         "longtail_5.txt", "longtail_6.txt", "longtail_7.txt"):
+            src = adir / tierfile
+            dst = root / tierfile
+            if src.exists() and not dst.exists():
+                shutil.copy2(src, dst)
         for tier in ("disc", "alive"):
             f = adir / f"delta_{tier}.json"
             if f.exists():

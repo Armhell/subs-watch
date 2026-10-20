@@ -90,7 +90,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: state-${{ matrix.tier }}
-          path: targets/
+          path: |
+            targets/
+            targets.txt
+            longtail_*.txt
           retention-days: 1
 
   notify-commit:
@@ -152,6 +155,7 @@ jobs:
         run: |
           git config user.name  "subs-watch[bot]"
           git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main || true
           git add state.tar.gz.enc
           if git diff --cached --quiet; then
             echo "No state changes this run"
