@@ -11,8 +11,9 @@ Every new domain is resolved (async DNS, pure python) — only domains that
 actually RESOLVE are alerted; resolving ones are probed with httpx for
 status/title when the binary is available.
 
-Delivery: one Telegram summary message + the FULL lists as .txt file
-attachments (no truncation).
+Delivery: opt-in via AI_TELEGRAM_BOT_TOKEN / AI_TELEGRAM_CHAT_ID, kept
+separate from the bug-bounty program chat. One summary + the FULL lists as
+.txt attachments; without those vars, lists are written to state only.
 
 State: targets/.ai_watch/known.txt (inside the encrypted blob in CI,
 committed back each run).
@@ -347,10 +348,13 @@ def main() -> None:
         f"({len(matched_live)} live)")
 
     # ---- deliver ----
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-    chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+    # .ai alerts are opt-in on a SEPARATE chat. Never reuse the shared
+    # TELEGRAM_* credentials, which belong to the bug-bounty program feed.
+    token = os.environ.get("AI_TELEGRAM_BOT_TOKEN", "")
+    chat = os.environ.get("AI_TELEGRAM_CHAT_ID", "")
     if not (token and chat and requests):
-        log("[i] Telegram tokens missing — lists written to state, no alert")
+        log("[i] .ai Telegram disabled (set AI_TELEGRAM_BOT_TOKEN / "
+            "AI_TELEGRAM_CHAT_ID for a separate .ai chat) — lists written to state")
         return
 
     day = datetime.now(timezone.utc).strftime("%Y-%m-%d")

@@ -140,8 +140,10 @@ jobs:
         if: github.event.schedule != '30 14 * * *'
         env:
           MERKLEMAP_KEY: ${{ secrets.MERKLEMAP_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # .ai alerts are opt-in and use a SEPARATE chat. Do not wire these
+          # to TELEGRAM_* — that chat is for bug-bounty program alerts.
+          AI_TELEGRAM_BOT_TOKEN: ${{ secrets.AI_TELEGRAM_BOT_TOKEN }}
+          AI_TELEGRAM_CHAT_ID: ${{ secrets.AI_TELEGRAM_CHAT_ID }}
         run: python3 ai_registrations_watch.py run --state-root .
 
       - name: Encrypt state
