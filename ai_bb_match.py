@@ -74,16 +74,27 @@ def load_tokens() -> None:
 def fetch_text(url: str, *, timeout: int = 30, retries: int = 2,
                quiet: bool = False, max_body: int = MAX_BODY) -> str:
     headers = {"User-Agent": "bb-ass-ai-bb-match/1.0 (authorized research)"}
-    last: Exception | None = None
+    last = ""
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX) as resp:
+            resp = urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX)
+            try:
                 if resp.status >= 300:
                     return ""
                 return resp.read(max_body).decode("utf-8", "ignore")
+            finally:
+                # Python 3.14 can otherwise emit a harmless
+                # "Exception ignored while finalizing HTTPResponse" at exit.
+                try:
+                    resp.close()
+                finally:
+                    try:
+                        resp.fp = None
+                    except Exception:  # noqa: BLE001
+                        pass
         except Exception as exc:  # noqa: BLE001 - network best effort
-            last = exc
+            last = f"{type(exc).__name__}: {exc}"
             if attempt < retries - 1:
                 continue
     if not quiet:
