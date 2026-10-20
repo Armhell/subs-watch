@@ -48,12 +48,12 @@ jobs:
           tar -xzf cs.tar.gz
           rm -f key.txt cs.tar.gz
 
-      - name: Poll CertSpotter (incremental, cursor-based)
+      - name: Poll crt.sh (incremental, cursor-based)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python3 certspotter_poll.py run --state-root . \
+          python3 ct_certpoll.py run --state-root . \
             --targets-file targets.txt --redact
 
       - name: Encrypt poll state

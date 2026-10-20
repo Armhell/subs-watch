@@ -44,9 +44,14 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
-          go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-          go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+          export GOSUMDB=off GOFLAGS=-mod=mod
+          for i in 1 2 3; do
+            go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest \
+              && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest && break
+            echo "[retry $i] go install failed — waiting"; sleep 20
+          done
           echo "$HOME/go/bin" >> "$GITHUB_PATH"
+          which subfinder httpx
 
       - name: Configure subfinder providers
         env:
@@ -90,8 +95,10 @@ jobs:
 
   notify-commit:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     needs: scan
+    if: ${{ !cancelled() }}   # run even when shards fail — merge whatever
+                              # succeeded; partial results still commit
     steps:
       - uses: actions/checkout@v4
 
@@ -108,8 +115,16 @@ jobs:
           pattern: state-*
           path: artifacts/
 
-      - name: Install age
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
+      - name: Install age + CT tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
+          export GOSUMDB=off GOFLAGS=-mod=mod
+          for i in 1 2 3; do
+            go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest \
+              && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest && break
+            echo "[retry $i] go install failed — waiting"; sleep 20
+          done
+          echo "$HOME/go/bin" >> "$GITHUB_PATH"
 
       - name: Merge shards, send one digest, build state
         env:
