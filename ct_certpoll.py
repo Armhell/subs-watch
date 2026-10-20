@@ -117,13 +117,13 @@ def entry_names(entry: dict, domain: str) -> list[str]:
 
 
 def poll_domain(domain: str, conn: sqlite3.Connection,
-                keywords: list[str]) -> list[str]:
-    """Returns new DNS names first seen for this domain."""
+                keywords: list[str]) -> tuple[list[str], bool]:
+    """Returns (new DNS names, ok). ok=False → crt.sh unreachable this run."""
     row = conn.execute("SELECT last_cert_id FROM cursor WHERE domain=?",
                        (domain,)).fetchone()
     entries = fetch_entries(domain)
     if entries is None:
-        return []
+        return [], False
 
     seed = row is None
     new_names: list[str] = []
@@ -156,7 +156,7 @@ def poll_domain(domain: str, conn: sqlite3.Connection,
 
     tag = "seed" if seed else "poll"
     log(f"{tag} {domain}: entries={len(entries)} new_names={len(new_names)}")
-    return new_names
+    return new_names, True
 
 
 def build_alert(new_by_domain: dict[str, list[str]],
@@ -198,11 +198,19 @@ def run(state_root: Path, targets_file: Path, keywords: list[str],
     log(f"=== crt.sh certpoll: {len(domains)} targets ===")
 
     new_by_domain: dict[str, list[str]] = {}
+    consecutive_failures = 0
     for domain in domains:
-        names = poll_domain(domain, conn, keywords)
+        names, ok = poll_domain(domain, conn, keywords)
+        if not ok:
+            consecutive_failures += 1
+            if consecutive_failures >= 10:
+                log("[!] crt.sh unreachable 10× consecutively — aborting this "
+                    "run; remaining targets retry next run")
+                break
+        else:
+            consecutive_failures = 0
         if names:
             new_by_domain[domain] = names
-        import time
         time.sleep(POLL_SLEEP)
 
     if not new_by_domain:
