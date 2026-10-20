@@ -33,6 +33,7 @@ targets never touch the repo or the workflow logs.
 - `subs_watch.py` / `subdomain_delta.py` / `merge_state.py` — engine
 - `ai_registrations_watch.py` — daily NRD `.ai` fetch/resolve/classify
 - `ai_bb_match.py` — `.ai` → BB-scope matcher + Telegram digest
+- `paid_ai_roots.json` — paid `.ai` scopes missing from the arkadiyt index
 - `.github/workflows/subs-watch.yml` — schedule + matrix + merge job
 
 `targets.txt`, `longtail_*.txt`, and `targets/` are **gitignored on purpose** —
