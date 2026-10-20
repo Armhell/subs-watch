@@ -291,6 +291,12 @@ def match_domain(domain: str, idx: dict) -> list[dict]:
     matches: list[dict] = []
     for ref in idx["scope_map"].get(domain, []):
         matches.append({"kind": "scope-exact", "program": ref})
+    # The domain is itself a subdomain of a mapped scope.
+    parts = domain.split(".")
+    for i in range(1, len(parts) - 1):
+        parent = ".".join(parts[i:])
+        for ref in idx["scope_map"].get(parent, []):
+            matches.append({"kind": "scope-subdomain", "program": ref})
     for ref in idx["parent_map"].get(domain, []):
         matches.append({"kind": "scope-parent", "program": ref})
     labels = domain.split(".")
@@ -310,6 +316,20 @@ def match_domain(domain: str, idx: dict) -> list[dict]:
                 "scope": domain,
             },
         })
+    if not matches:
+        for parent in parent_suffixes(domain):
+            if parent in idx["suffix_set"]:
+                matches.append({
+                    "kind": "scope-subdomain-unmapped",
+                    "program": {
+                        "platform": "unknown",
+                        "name": "BB scope match",
+                        "url": "",
+                        "bounty": "unknown",
+                        "scope": parent,
+                    },
+                })
+                break
     # If a mapped program exists, drop generic wildcard/unmapped noise for
     # the same domain; the mapped program is the useful signal.
     if any((m["program"].get("platform") or "unknown") != "unknown" for m in matches):
@@ -321,10 +341,12 @@ def match_domain(domain: str, idx: dict) -> list[dict]:
     # Deduplicate, preferring the strongest evidence for the same program.
     priority = {
         "scope-exact": 0,
-        "scope-parent": 1,
-        "wildcard-apex": 2,
-        "wildcard-subdomain": 3,
-        "scope-unmapped": 4,
+        "scope-subdomain": 1,
+        "scope-parent": 2,
+        "wildcard-apex": 3,
+        "wildcard-subdomain": 4,
+        "scope-unmapped": 5,
+        "scope-subdomain-unmapped": 6,
     }
     best: dict[tuple, dict] = {}
     for m in matches:
