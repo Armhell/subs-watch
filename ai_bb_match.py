@@ -72,7 +72,7 @@ def load_tokens() -> None:
 
 
 def fetch_text(url: str, *, timeout: int = 30, retries: int = 2,
-               quiet: bool = False) -> str:
+               quiet: bool = False, max_body: int = MAX_BODY) -> str:
     headers = {"User-Agent": "bb-ass-ai-bb-match/1.0 (authorized research)"}
     last: Exception | None = None
     for attempt in range(retries):
@@ -81,7 +81,7 @@ def fetch_text(url: str, *, timeout: int = 30, retries: int = 2,
             with urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX) as resp:
                 if resp.status >= 300:
                     return ""
-                return resp.read(MAX_BODY).decode("utf-8", "ignore")
+                return resp.read(max_body).decode("utf-8", "ignore")
         except Exception as exc:  # noqa: BLE001 - network best effort
             last = exc
             if attempt < retries - 1:
@@ -95,7 +95,9 @@ def read_source(scope_dir: str | None, name: str) -> str:
     if scope_dir:
         path = Path(scope_dir) / name
         return path.read_text(errors="replace") if path.exists() else ""
-    return fetch_text(DATA_BASE + name, timeout=120)
+    # Scope JSON files are large (H1 alone is ~18 MB); do not use the
+    # evidence-page body cap here.
+    return fetch_text(DATA_BASE + name, timeout=120, max_body=50_000_000)
 
 
 def norm_host(value: object) -> str:
