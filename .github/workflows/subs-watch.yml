@@ -163,11 +163,11 @@ jobs:
         run: |
           git config user.name  "subs-watch[bot]"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase origin main || true
           git add state.tar.gz.enc
           if git diff --cached --quiet; then
             echo "No state changes this run"
           else
             git commit -m "subs-watch state $(date -u +%F-%H)"
+            git pull --rebase origin main
             git push
           fi
