@@ -95,6 +95,9 @@ jobs:
             targets.txt
             longtail_*.txt
           retention-days: 1
+          # .ai_watch (known/resolved/seen) is hidden; preserve it across
+          # scan artifacts or the daily .ai matcher state is lost.
+          include-hidden-files: true
 
   notify-commit:
     runs-on: ubuntu-latest
