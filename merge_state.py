@@ -30,6 +30,45 @@ from subdomain_delta import telegram_send, write_summary_md  # noqa: E402
 from subs_watch import build_message  # noqa: E402
 
 
+MAX_PENDING = 50_000
+MAX_PENDING_PER_TARGET = 1_000
+
+
+def compact_pending(path: Path) -> None:
+    """Keep the dead-sub retry queue bounded; it otherwise grows forever."""
+    try:
+        entries = json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return
+    if not isinstance(entries, list):
+        return
+    by_key = {}
+    for e in entries:
+        if not isinstance(e, dict):
+            continue
+        target, sub = e.get("target"), e.get("sub")
+        if not target or not sub:
+            continue
+        key = (target, sub)
+        old = by_key.get(key)
+        if old is None or str(e.get("since", "")) >= str(old.get("since", "")):
+            by_key[key] = e
+    ordered = sorted(by_key.values(), key=lambda e: str(e.get("since", "")),
+                     reverse=True)
+    out = []
+    per_target = {}
+    for e in ordered:
+        target = e.get("target")
+        if per_target.get(target, 0) >= MAX_PENDING_PER_TARGET:
+            continue
+        per_target[target] = per_target.get(target, 0) + 1
+        out.append(e)
+        if len(out) >= MAX_PENDING:
+            break
+    path.write_text(json.dumps(out, indent=1))
+    print(f"pending compacted: {len(entries)} -> {len(out)}")
+
+
 def merge_tree(src: Path, dst: Path) -> None:
     for p in src.rglob("*"):
         rel = p.relative_to(src)
@@ -111,6 +150,9 @@ def main() -> None:
     # Org-wide summary md from merged deltas
     tr = root / "targets"
     write_summary_md(merged_disc, tr)
+    pending = tr / ".subs_watch" / "pending.json"
+    if pending.exists():
+        compact_pending(pending)
     print(f"merged {shards} shard state tree(s)")
 
 
