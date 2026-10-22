@@ -147,6 +147,19 @@ jobs:
           # sends only .ai domains that match a BB program.
         run: python3 ai_registrations_watch.py run --state-root .
 
+      - name: Refresh bbradar Pro scopes + target changes
+        if: github.event.schedule != '30 14 * * *'
+        continue-on-error: true
+        env:
+          BBRADAR_API_KEY: ${{ secrets.BBRADAR_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 bbradar_sync.py --state-root . \
+            --targets-file targets.txt \
+            --matcher-file paid_ai_roots.json \
+            --append-targets --notify-changes
+
       - name: Match new .ai domains to BB programs
         if: github.event.schedule != '30 14 * * *'
         continue-on-error: true   # never block state encryption/commit
