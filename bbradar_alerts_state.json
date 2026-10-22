@@ -2211,6 +2211,7 @@
   "octo.dc.gov/itpolicies",
   "octopus.com/security/disclosure",
   "odoo.com/security",
+  "oen.tw/security",
   "ofza.com/en/bug-bounty-program",
   "oge.gov/web/oge.nsf/0/4356fc22521ee4d4852586b900593700/$file/oge%20vulnerability%20disclosure%20policy.pdf",
   "omnisend.com/bug-bounty",
@@ -2619,6 +2620,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-22T18:13:34+00:00",
- "last_full_sweep": "2026-10-22T18:13:34+00:00"
+ "last_program_sync": "2026-10-22T21:47:27+00:00",
+ "last_full_sweep": "2026-10-22T21:47:27+00:00"
 }
