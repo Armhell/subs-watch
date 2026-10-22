@@ -1,5 +1,21 @@
 [
   {
+    "host": "agentpassport.ai",
+    "platform": "Sherlock",
+    "name": "Kite AI",
+    "url": "https://audits.sherlock.xyz/bug-bounties/359",
+    "bounty": "up to $10,000",
+    "scope": "https://agentpassport.ai/"
+  },
+  {
+    "host": "bugbase.ai",
+    "platform": "Bugbase",
+    "name": "BugBase",
+    "url": "https://bugbase.ai/programs/bugbase",
+    "bounty": "up to $500",
+    "scope": "https://bugbase.ai"
+  },
+  {
     "host": "faraday.ai",
     "platform": "hackerone",
     "name": "Faraday, Inc.",
@@ -8,11 +24,83 @@
     "scope": "faraday.ai"
   },
   {
+    "host": "filemanager.ai",
+    "platform": "Self-Hosted",
+    "name": "InfinityFree",
+    "url": "https://www.infinityfree.com/responsible-disclosure",
+    "bounty": "paid",
+    "scope": "filemanager.ai"
+  },
+  {
+    "host": "gmgn.ai",
+    "platform": "HackenProof",
+    "name": "GMGN Web & Mobile",
+    "url": "https://hackenproof.com/programs/gmgn-web-and-mobile",
+    "bounty": "up to $1,000,000",
+    "scope": "*.gmgn.ai"
+  },
+  {
+    "host": "gokite.ai",
+    "platform": "Sherlock",
+    "name": "Kite AI",
+    "url": "https://audits.sherlock.xyz/bug-bounties/359",
+    "bounty": "up to $10,000",
+    "scope": "https://docs.gokite.ai/kite-chain/3-developing/smart-contracts-list"
+  },
+  {
     "host": "kaleido.ai",
     "platform": "bugcrowd",
     "name": "Kaleido",
     "url": "https://bugcrowd.com/engagements/kaleido",
     "bounty": "paid",
     "scope": "kaleido.ai"
+  },
+  {
+    "host": "kontent.ai",
+    "platform": "Self-Hosted",
+    "name": "Kontent AI",
+    "url": "https://kontent.ai/security-policy",
+    "bounty": "up to $200",
+    "scope": "*.kontent.ai"
+  },
+  {
+    "host": "perlego.ai",
+    "platform": "Self-Hosted",
+    "name": "perlego.com",
+    "url": "https://security.perlego.com/VRP.pdf",
+    "bounty": "paid",
+    "scope": "*.perlego.ai"
+  },
+  {
+    "host": "pokee.ai",
+    "platform": "Self-Hosted",
+    "name": "pokee.ai",
+    "url": "https://pokee.ai/bug-bounty",
+    "bounty": "paid",
+    "scope": "pokee.ai"
+  },
+  {
+    "host": "razer.ai",
+    "platform": "Inspectiv",
+    "name": "Razer Synapse, Chroma and Web",
+    "url": "https://app.inspectiv.com/#/programs/e2nn29FCTULyZK84yp9diY",
+    "bounty": "up to $500",
+    "scope": "razer.ai"
+  },
+  {
+    "host": "rogo.ai",
+    "platform": "Cantina",
+    "name": "Rogo",
+    "url": "https://cantina.xyz/bounties/5a488487-a48e-41c6-be92-2e65b569b01c",
+    "bounty": "up to $25,000",
+    "scope": "https://app.rogo.ai/"
+  },
+  {
+    "host": "tenetsecurity.ai",
+    "platform": "Self-Hosted",
+    "name": "Disclosure Policy",
+    "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html",
+    "bounty": "up to $200,000",
+    "scope": "tenetsecurity.ai"
   }
 ]
