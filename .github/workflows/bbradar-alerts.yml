@@ -1,0 +1,48 @@
+name: bbradar-alerts
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bbradar-alerts
+  cancel-in-progress: false
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check new paid programs
+        env:
+          BBRADAR_API_KEY: ${{ secrets.BBRADAR_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 bbradar_alerts.py \
+            --state-file bbradar_alerts_state.json \
+            --known-programs-file bbradar_known_programs.json \
+            --notify
+
+      - name: Commit alert state
+        run: |
+          git config user.name  "bbradar-alerts[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add bbradar_alerts_state.json
+          if git diff --cached --quiet; then
+            echo "No alert state changes"
+          else
+            git commit -m "bbradar alert state $(date -u +%F-%H%M)"
+            git pull --rebase origin main
+            git push
+          fi
