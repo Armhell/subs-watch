@@ -796,6 +796,7 @@
   "cysecinnovation.com/security",
   "cytotronics.com/vulnerability-disclosure-policy",
   "danskebank.com/responsible-disclosure",
+  "datachain.ai/bug-bounty",
   "datasite.com/en/legal/vulnerability-disclosure-policy",
   "debian.org/security/disclosure-policy",
   "decryptiondigest.com/blog/vulnerability-disclosure-program-bug-bounty-guide",
@@ -2620,6 +2621,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-22T21:47:27+00:00",
- "last_full_sweep": "2026-10-22T21:47:27+00:00"
+ "last_program_sync": "2026-10-23T05:06:13+00:00",
+ "last_full_sweep": "2026-10-23T05:06:13+00:00"
 }
