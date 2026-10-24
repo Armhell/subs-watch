@@ -184,6 +184,9 @@ jobs:
             echo "No state changes this run"
           else
             git commit -m "subs-watch state $(date -u +%F-%H)"
+            # The .ai sync refreshes this tracked file in the workspace only.
+            # Discard it so pull --rebase sees a clean tree.
+            git restore --worktree paid_ai_roots.json 2>/dev/null || true
             git pull --rebase origin main
             git push
           fi
