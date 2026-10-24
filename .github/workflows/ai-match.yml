@@ -1,0 +1,80 @@
+name: ai-match
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-match
+  cancel-in-progress: false
+
+jobs:
+  match:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install age
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq age >/dev/null
+
+      - name: Decrypt .ai state
+        env:
+          AGE_PRIVATE_KEY: ${{ secrets.AGE_PRIVATE_KEY }}
+        run: |
+          if [ ! -f ai_state.tar.gz.enc ]; then
+            echo "No ai_state yet; starting fresh"
+            mkdir -p targets/.ai_watch
+            exit 0
+          fi
+          printenv AGE_PRIVATE_KEY > key.txt
+          age -d -i key.txt -o ai_state.tar.gz ai_state.tar.gz.enc
+          tar -xzf ai_state.tar.gz
+          rm -f key.txt ai_state.tar.gz
+
+      - name: Fetch and resolve new .ai
+        run: python3 ai_registrations_watch.py run --state-root .
+
+      - name: Refresh bbradar .ai scopes
+        env:
+          BBRADAR_API_KEY: ${{ secrets.BBRADAR_API_KEY }}
+        run: |
+          python3 bbradar_sync.py --state-root . \
+            --matcher-file paid_ai_roots.json --no-changes
+
+      - name: Match .ai domains to BB programs
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 ai_bb_match.py --state-root . --notify --evidence \
+            --max-evidence 1300
+
+      - name: Encrypt .ai state
+        run: |
+          tar -czf ai_state.tar.gz targets/.ai_watch
+          age -r "$(cat age_pubkey.txt)" -o ai_state.tar.gz.enc ai_state.tar.gz
+          rm -f ai_state.tar.gz
+
+      - name: Commit .ai state
+        run: |
+          git config user.name  "ai-match[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add ai_state.tar.gz.enc
+          if git diff --cached --quiet; then
+            echo "No .ai state changes"
+          else
+            git commit -m ".ai state $(date -u +%F-%H%M)"
+            # paid_ai_roots.json is refreshed in the workspace only
+            git restore --worktree paid_ai_roots.json 2>/dev/null || true
+            git pull --rebase origin main
+            git push
+          fi

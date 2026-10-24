@@ -138,15 +138,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python3 merge_state.py --artifacts-root artifacts/ --state-root .
 
-      # .ai TLD registration feed — free daily NRD list, no key needed
-      - name: Check new .ai registrations
-        if: github.event.schedule != '30 14 * * *'
-        env:
-          MERKLEMAP_KEY: ${{ secrets.MERKLEMAP_KEY }}
-          # Raw .ai domains are never sent to Telegram. The matcher below
-          # sends only .ai domains that match a BB program.
-        run: python3 ai_registrations_watch.py run --state-root .
-
+      # Scope-only bbradar refresh; NRD/.ai matching lives in ai-match.yml.
       - name: Refresh bbradar Pro scopes + target changes
         if: github.event.schedule != '30 14 * * *'
         continue-on-error: true
@@ -159,14 +151,6 @@ jobs:
             --targets-file targets.txt \
             --matcher-file paid_ai_roots.json \
             --append-targets --notify-changes
-
-      - name: Match new .ai domains to BB programs
-        if: github.event.schedule != '30 14 * * *'
-        continue-on-error: true   # never block state encryption/commit
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python3 ai_bb_match.py --state-root . --notify --evidence --max-evidence 1300
 
       - name: Encrypt state
         run: |
