@@ -154,8 +154,10 @@ jobs:
 
       - name: Encrypt state
         run: |
-          tar -czf state.tar.gz targets.txt longtail_*.txt targets/ 2>/dev/null \
-            || tar -czf state.tar.gz targets.txt longtail_*.txt
+          tar -cf state.tar targets.txt longtail_*.txt targets/ 2>/dev/null \
+            || tar -cf state.tar targets.txt longtail_*.txt
+          gzip -9 -c state.tar > state.tar.gz
+          rm -f state.tar
           age -r "$(cat age_pubkey.txt)" -o state.tar.gz.enc state.tar.gz
           rm -f state.tar.gz
 
