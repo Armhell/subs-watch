@@ -46,6 +46,7 @@
   "aqqo.com/security/responsible-disclosure",
   "arts.gov/vulnerability-disclosure-policy",
   "arxiv.org/html/2509.06136v1",
+  "aspora.com/report-vulnerability",
   "astrill.com/bug-bounty",
   "atlan.com/responsible-disclosure-program",
   "atmail.com/bug-bounty",
@@ -2621,6 +2622,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-23T05:06:13+00:00",
- "last_full_sweep": "2026-10-23T05:06:13+00:00"
+ "last_program_sync": "2026-10-24T13:14:33+00:00",
+ "last_full_sweep": "2026-10-24T13:14:33+00:00"
 }
