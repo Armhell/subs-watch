@@ -110,6 +110,7 @@
   "beckmancoulter.com/en/about-beckman-coulter/product-security",
   "belastingdienst.nl/wps/wcm/connect/bldcontenten/standaard_functies/individuals/contact/data-leak-vulnerability-abuse-computer-systems/data-leak-vulnerability-abuse-computer-systems-report",
   "bentley.com/legal/bug-bounty-report",
+  "betterteam.com/bug-bounty",
   "bezpieczenstwo.agh.edu.pl/en/vulnerability-disclosure-policy",
   "bingbong.de/vulnerability-disclosure-policy",
   "bio-key.com/vulnerability-reporting",
@@ -761,6 +762,7 @@
   "codesignal.com/security/disclosure-policy",
   "codingninjas.com/bug-bounty",
   "coincryptorank.com/bug-bounty",
+  "coinpayments.net/vulnerability-disclosure-bug-bounty-program",
   "coins.ph/en-ph/bug-bounty",
   "colabra.ai/rdp",
   "coloop.ai/responsible-disclosure",
@@ -2622,6 +2624,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-24T13:14:33+00:00",
- "last_full_sweep": "2026-10-24T13:14:33+00:00"
+ "last_program_sync": "2026-10-25T01:04:49+00:00",
+ "last_full_sweep": "2026-10-25T01:04:49+00:00"
 }
