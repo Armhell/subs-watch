@@ -1053,6 +1053,7 @@
   "hackenproof.com/programs/poloniex-web-and-api",
   "hackenproof.com/programs/redstone-smart-contracts",
   "hackenproof.com/programs/redstone-web",
+  "hackenproof.com/programs/ref-finance-smart-contracts",
   "hackenproof.com/programs/risc-zero-blockchain-verifiers",
   "hackenproof.com/programs/risc-zero-zkvm",
   "hackenproof.com/programs/safeswap-app",
@@ -2624,6 +2625,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-25T01:04:49+00:00",
- "last_full_sweep": "2026-10-25T01:04:49+00:00"
+ "last_program_sync": "2026-10-25T15:05:23+00:00",
+ "last_full_sweep": "2026-10-25T15:05:23+00:00"
 }
