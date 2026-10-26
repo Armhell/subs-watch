@@ -1055,6 +1055,7 @@
   "hackenproof.com/programs/redstone-smart-contracts",
   "hackenproof.com/programs/redstone-web",
   "hackenproof.com/programs/ref-finance-smart-contracts",
+  "hackenproof.com/programs/rhea-finance-smart-contracts",
   "hackenproof.com/programs/risc-zero-blockchain-verifiers",
   "hackenproof.com/programs/risc-zero-zkvm",
   "hackenproof.com/programs/safeswap-app",
@@ -2626,6 +2627,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-26T11:36:10+00:00",
- "last_full_sweep": "2026-10-26T11:36:10+00:00"
+ "last_program_sync": "2026-10-26T17:41:22+00:00",
+ "last_full_sweep": "2026-10-26T17:41:22+00:00"
 }
