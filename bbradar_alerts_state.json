@@ -1682,6 +1682,7 @@
   "hackerone.com/zooplus",
   "hackerone.com/zurich-insurance",
   "hackerrank.com/trust/security",
+  "hackme.tech",
   "hackzar.com/programs/hackzar",
   "hackzar.com/programs/khulna-university",
   "hackzar.com/programs/kisc",
@@ -2127,6 +2128,7 @@
   "learningcommons.org/vulnerability-disclosure-policy",
   "legal.shakepay.com/master/bug-bounty-program",
   "leica-camera.com/sites/default/files/2026-09/vulnerability-disclosure-policy.pdf",
+  "lemfi.com/en-us/legal/vulnerability-disclosure-policy",
   "liminalcustody.com/bug-bounty",
   "linear.app/security/vulnerability",
   "liquidweb.com/policies/bug-bounty-program",
@@ -2628,6 +2630,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-27T11:06:45+00:00",
- "last_full_sweep": "2026-10-27T11:06:45+00:00"
+ "last_program_sync": "2026-10-28T02:39:22+00:00",
+ "last_full_sweep": "2026-10-28T02:39:22+00:00"
 }
