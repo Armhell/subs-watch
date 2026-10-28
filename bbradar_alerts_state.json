@@ -289,6 +289,7 @@
   "bugbounty.standoff365.com/en-us/programs/rambler-apt",
   "bugbounty.standoff365.com/en-us/programs/rambler_and_co",
   "bugbounty.standoff365.com/en-us/programs/ramblerco_sport",
+  "bugbounty.standoff365.com/en-us/programs/red_database",
   "bugbounty.standoff365.com/en-us/programs/rowi",
   "bugbounty.standoff365.com/en-us/programs/rustore",
   "bugbounty.standoff365.com/en-us/programs/samokat",
@@ -1974,6 +1975,7 @@
   "intigriti.com/programs/intergamma/intergamma/detail",
   "intigriti.com/programs/intigriti/challenge0926/detail",
   "intigriti.com/programs/intigriti/challenge1026/detail",
+  "intigriti.com/programs/intigriti/challengebrp/detail",
   "intigriti.com/programs/intigriti/intigriti/detail",
   "intigriti.com/programs/ivoai/ivovulnerabilitydisclosureprogram/detail",
   "intigriti.com/programs/kinepolis/website/detail",
@@ -2631,6 +2633,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-28T11:42:40+00:00",
- "last_full_sweep": "2026-10-28T11:42:40+00:00"
+ "last_program_sync": "2026-10-28T17:27:46+00:00",
+ "last_full_sweep": "2026-10-28T17:27:46+00:00"
 }
