@@ -2071,6 +2071,7 @@
   "issuehunt.io/programs/2143ce01-58cb-436b-822f-5071260c5b8a",
   "issuehunt.io/programs/382ed642-bbb5-46fa-ab76-7f1b5633ac7b",
   "issuehunt.io/programs/4111b261-0d45-4e9b-ac9f-36cfbc47c630",
+  "issuehunt.io/programs/49fdc287-766c-4d8c-9ae2-dc7378cc68be",
   "issuehunt.io/programs/51518951-c3aa-48b9-b117-8a612e5a3d0e",
   "issuehunt.io/programs/72c9712d-1727-47a1-8b1e-e51940135e64",
   "issuehunt.io/programs/75563b98-3a9c-4ca3-956d-07b30d5d3962",
@@ -2630,6 +2631,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-28T02:39:22+00:00",
- "last_full_sweep": "2026-10-28T02:39:22+00:00"
+ "last_program_sync": "2026-10-28T11:42:40+00:00",
+ "last_full_sweep": "2026-10-28T11:42:40+00:00"
 }
