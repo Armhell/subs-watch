@@ -1741,6 +1741,7 @@
   "ifixit.com/info/responsible_disclosure",
   "ignet.gov/vulnerability-disclosure-policy",
   "illumio.com/legal/responsible-disclosure-policy",
+  "immunefi.com/audit-competition/plether/information",
   "immunefi.com/bug-bounty/0x/information",
   "immunefi.com/bug-bounty/1inch-aqua-improvement/information",
   "immunefi.com/bug-bounty/1inch-aqua/information",
@@ -2634,6 +2635,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-30T03:02:32+00:00",
- "last_full_sweep": "2026-10-30T03:02:32+00:00"
+ "last_program_sync": "2026-10-30T11:42:43+00:00",
+ "last_full_sweep": "2026-10-30T11:42:43+00:00"
 }
