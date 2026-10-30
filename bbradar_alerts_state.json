@@ -1084,6 +1084,7 @@
   "hackenproof.com/programs/weex-web-and-app",
   "hackenproof.com/programs/whitebit",
   "hackenproof.com/programs/whitebit-blog",
+  "hackenproof.com/programs/whitechain",
   "hackenproof.com/programs/whitemarket-web",
   "hackenproof.com/programs/xt",
   "hackenproof.com/programs/zest-protocol-smart-contracts",
@@ -2635,6 +2636,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-30T11:42:43+00:00",
- "last_full_sweep": "2026-10-30T11:42:43+00:00"
+ "last_program_sync": "2026-10-30T17:16:19+00:00",
+ "last_full_sweep": "2026-10-30T17:16:19+00:00"
 }
