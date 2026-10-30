@@ -2246,6 +2246,7 @@
   "pactum.com/responsible-disclosure",
   "pagopa.gov.it/security.html",
   "panteracapital.com/pantera-bug-bounty",
+  "pariapp.com/bounty-program",
   "parity.io/bug-bounty",
   "particle.io/legal/responsible-disclosure",
   "passbolt.com/security",
@@ -2633,6 +2634,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-10-28T17:27:46+00:00",
- "last_full_sweep": "2026-10-28T17:27:46+00:00"
+ "last_program_sync": "2026-10-30T03:02:32+00:00",
+ "last_full_sweep": "2026-10-30T03:02:32+00:00"
 }
