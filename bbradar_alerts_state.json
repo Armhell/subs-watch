@@ -296,6 +296,7 @@
   "bugbounty.standoff365.com/en-us/programs/sber2b_edo",
   "bugbounty.standoff365.com/en-us/programs/sberlogistics",
   "bugbounty.standoff365.com/en-us/programs/standoff-365",
+  "bugbounty.standoff365.com/en-us/programs/t-crypto",
   "bugbounty.standoff365.com/en-us/programs/target_vk",
   "bugbounty.standoff365.com/en-us/programs/tarm_vk",
   "bugbounty.standoff365.com/en-us/programs/tbank",
@@ -2640,6 +2641,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-02T02:50:21+00:00",
- "last_full_sweep": "2026-11-02T02:50:21+00:00"
+ "last_program_sync": "2026-11-02T13:54:51+00:00",
+ "last_full_sweep": "2026-11-02T13:54:51+00:00"
 }
