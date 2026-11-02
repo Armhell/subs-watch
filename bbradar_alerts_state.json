@@ -1713,6 +1713,7 @@
   "hitachi.com/hirt",
   "hivenet.com/bug-bounty",
   "hiverhq.com/disclosure",
+  "hivesilo.com/security-disclosure",
   "hldgroup.org/legal/responsible-disclosure",
   "hoasted.com/over-ons/vulnerability-disclosure-policy",
   "home.saxo/legal/vulnerability-disclosure-policy/vulnerability-disclosure-policy",
@@ -2184,6 +2185,7 @@
   "mycrypto.com/security",
   "mydukaan.io/bugbounty",
   "myemma.com/security",
+  "mygate.com/responsible-disclosure",
   "myinternship.id/security-policy",
   "mypinpad.com/responsible-disclosure",
   "myrobotdoll.com/security-policy",
@@ -2194,6 +2196,7 @@
   "nautadutilh.com/en/general-information/responsible-disclosure",
   "nautilustrader.io/security",
   "nayapay.com/responsible-disclosure-program-out-of-scope-vulnerability",
+  "nbim.no/en/responsible-disclosure-policy",
   "ncd.gov/accountability/vulnerability-disclosure-policy",
   "ncsc.nl/en/cvd-report-form",
   "nebraska.edu/offices/information-technology-services/vulnerability-disclosure-program",
@@ -2637,6 +2640,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-01T12:05:53+00:00",
- "last_full_sweep": "2026-11-01T12:05:53+00:00"
+ "last_program_sync": "2026-11-02T02:50:21+00:00",
+ "last_full_sweep": "2026-11-02T02:50:21+00:00"
 }
