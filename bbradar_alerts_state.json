@@ -362,6 +362,7 @@
   "bugcrowd.com/engagements/bugcrowd",
   "bugcrowd.com/engagements/bullish",
   "bugcrowd.com/engagements/bullish-exchange",
+  "bugcrowd.com/engagements/bytera-market",
   "bugcrowd.com/engagements/caelor-group-market",
   "bugcrowd.com/engagements/canva",
   "bugcrowd.com/engagements/cappsule-sarl",
@@ -2503,6 +2504,7 @@
   "surf.nl/coordinated-vulnerability-disclosure",
   "surfshark.com/bounty-policy",
   "survicate.com/bug-bounty-program",
+  "swarmia.com/vulnerability-disclosure",
   "swiggy.com/bug-bounty",
   "sycamore.so/policies/bug-bounty",
   "symetrie.fr/en/coordinated-vulnerability-disclosure-policy",
@@ -2529,6 +2531,7 @@
   "tigerdata.com/security/vulnerability-disclosure",
   "tiobe.com/vulnerability-disclosure-policy",
   "tiqets.com/en/responsible-disclosure",
+  "tiquo.co/en/bug-bounty",
   "titanfx.com/legal-documents/security-issue-reporting-policy",
   "tmgsec.com/bug-bounty",
   "toddleapp.com/responsible-vulnerability-disclosure-policy",
@@ -2645,6 +2648,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-04T03:25:53+00:00",
- "last_full_sweep": "2026-11-04T03:25:53+00:00"
+ "last_program_sync": "2026-11-04T13:19:41+00:00",
+ "last_full_sweep": "2026-11-04T13:19:41+00:00"
 }
