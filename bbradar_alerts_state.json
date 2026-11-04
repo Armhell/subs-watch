@@ -1909,6 +1909,7 @@
   "insighthealth.ai/security",
   "inspectiv.com",
   "instagram.com/mychenan",
+  "intempt.com/bug-bounty",
   "internet.nl/disclosure",
   "intigriti.com/programs/adac/adacvulnerabilitydisclosureprogram/detail",
   "intigriti.com/programs/aikido/aikido/detail",
@@ -2176,6 +2177,7 @@
   "mioffice.ai/security/bug-bounty",
   "missiveapp.com/security",
   "mitaccomputing.com/mct_minio/downloads/1f2eca80-f931-42d2-981e-fe2997863092.pdf",
+  "miter.com/security",
   "mitsubishielectric.com/psirt/disclosurepolicy/index.html",
   "mlaify.io/security",
   "mollie.com/responsible-disclosure",
@@ -2252,6 +2254,7 @@
   "orbbec.com/vulnerability-disclosure-policy",
   "osti.gov/.well-known/security.txt",
   "oziva.in/pages/oziva-responsible-disclosure-program",
+  "pachca.com/en/security/bug-bounty",
   "pactum.com/responsible-disclosure",
   "pagopa.gov.it/security.html",
   "panteracapital.com/pantera-bug-bounty",
@@ -2648,6 +2651,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-04T13:19:41+00:00",
- "last_full_sweep": "2026-11-04T13:19:41+00:00"
+ "last_program_sync": "2026-11-04T22:55:47+00:00",
+ "last_full_sweep": "2026-11-04T22:55:47+00:00"
 }
