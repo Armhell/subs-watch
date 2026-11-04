@@ -2373,6 +2373,7 @@
   "securingelections.org/vulnerability-policy",
   "securitas.com/en/about-us/responsible-disclosure",
   "securiti.ai/security",
+  "securitize.io/bug-bounty",
   "security-fed-txt.thomsonreuters.com/vdp-policy.txt",
   "security.360.cn/en/policy.html",
   "security.apple.com",
@@ -2644,6 +2645,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-03T22:36:59+00:00",
- "last_full_sweep": "2026-11-03T22:36:59+00:00"
+ "last_program_sync": "2026-11-04T03:25:53+00:00",
+ "last_full_sweep": "2026-11-04T03:25:53+00:00"
 }
