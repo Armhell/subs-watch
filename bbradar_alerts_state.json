@@ -2242,6 +2242,7 @@
   "on2it.net/responsible-disclosure",
   "onbe.com/policy/vulnerability-disclosure-policy",
   "onestepgps.com/bug-bounty",
+  "onlinehashcrack.com/guides/ethical-hacking/bug-bounty-hunting-maximize-rewards.php",
   "onpay.io/responsible-disclosure",
   "ontic.co/legal/vulnerability-disclosure-program",
   "opencontent.it/responsible-disclosure-policy.html",
@@ -2651,6 +2652,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-04T22:55:47+00:00",
- "last_full_sweep": "2026-11-04T22:55:47+00:00"
+ "last_program_sync": "2026-11-05T13:32:36+00:00",
+ "last_full_sweep": "2026-11-05T13:32:36+00:00"
 }
