@@ -263,6 +263,7 @@
   "bugbounty.standoff365.com/en-us/programs/magnit",
   "bugbounty.standoff365.com/en-us/programs/mail_vk",
   "bugbounty.standoff365.com/en-us/programs/max",
+  "bugbounty.standoff365.com/en-us/programs/mshp",
   "bugbounty.standoff365.com/en-us/programs/mx_360",
   "bugbounty.standoff365.com/en-us/programs/mx_edr",
   "bugbounty.standoff365.com/en-us/programs/mx_o2",
@@ -2652,6 +2653,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-05T13:32:36+00:00",
- "last_full_sweep": "2026-11-05T13:32:36+00:00"
+ "last_program_sync": "2026-11-06T22:26:59+00:00",
+ "last_full_sweep": "2026-11-06T22:26:59+00:00"
 }
