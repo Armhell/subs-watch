@@ -631,6 +631,7 @@
   "bugcrowd.com/engagements/ynab",
   "bugcrowd.com/engagements/zendesk",
   "bugcrowd.com/engagements/zola-mbb-og",
+  "bugloud.com/legal/responsible-disclosure",
   "bugrap.io/bounties/anome",
   "bugrap.io/bounties/b%c2%b2%20network",
   "bugrap.io/bounties/bifrost",
@@ -1755,6 +1756,7 @@
   "help.spreaker.com/en/articles/5123644-bug-bounty-program",
   "help.tryhackme.com/en/articles/6495946-the-bug-bounty-program",
   "help.xsolla.com/xsolla-bounty-program",
+  "heygotrade.com/security",
   "hidrografico.pt/.well-known/security-policy.txt",
   "hitachi.com/hirt",
   "hivenet.com/bug-bounty",
@@ -2349,6 +2351,7 @@
   "policylibrary.gatech.edu/information-technology/cyber-security-policy",
   "porkbun.com/security",
   "portal26.ai/vulnerability-disclosure",
+  "postaffiliatepro.com/faq/bug-bounty-program-and-vulnerability-reporting",
   "postmarkapp.com/support/article/779-responsible-disclosure-policy",
   "practo.com/company/responsible-disclosure-policy",
   "prc.gov/vulnerability-disclosure-policy",
@@ -2642,6 +2645,7 @@
   "uploadcare.com/about/bug-bounty",
   "upstox.com/bug-bounty",
   "urlscan.io/security",
+  "usa.twinhealth.com/legal/twin-health-responsible-disclosure-policy",
   "usccr.gov/vulnerability-disclosure-policy",
   "uscourts.gov/privacy-security-policy/vulnerability-disclosure-policy",
   "utwente.nl/en/cyber-safety/cybersafety/legislation/responsible-disclosure.pdf",
@@ -2719,6 +2723,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-07T21:06:52+00:00",
- "last_full_sweep": "2026-11-07T21:06:52+00:00"
+ "last_program_sync": "2026-11-08T02:47:57+00:00",
+ "last_full_sweep": "2026-11-08T02:47:57+00:00"
 }
