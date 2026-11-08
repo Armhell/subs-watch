@@ -129,6 +129,7 @@
   "blinklab.org/security/vulnerability-disclosure-statement",
   "blockdaemon.com/vulnerability-disclosure-program-policy",
   "blocksender.io/vulnerability-disclosure-policy",
+  "blog.cex.io/news/cex-io-bug-bounty-program-and-policy-22948",
   "blog.splitwise.com/about/responsible-disclosure-special-thanks",
   "bluecanvas.io/report-vulnerability",
   "bluescape.com/vulnerability-disclosure-policy",
@@ -230,6 +231,7 @@
   "bugbounty.compass-security.com/service-details.html",
   "bugbounty.keboola.com",
   "bugbounty.linecorp.com/en",
+  "bugbounty.livesport.eu/docs/vulnerability%20disclosure%20policy.pdf",
   "bugbounty.meta.com/scope",
   "bugbounty.paytm.com",
   "bugbounty.pintu.co.id",
@@ -2723,6 +2725,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-08T02:47:57+00:00",
- "last_full_sweep": "2026-11-08T02:47:57+00:00"
+ "last_program_sync": "2026-11-08T12:16:14+00:00",
+ "last_full_sweep": "2026-11-08T12:16:14+00:00"
 }
