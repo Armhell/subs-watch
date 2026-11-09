@@ -2285,6 +2285,7 @@
   "obdev.at/cve/vulnerability-disclosure-policy.html",
   "occrp.org/en/responsible-disclosure",
   "octo.dc.gov/itpolicies",
+  "octopus-review.ai/docs/security",
   "octopus.com/security/disclosure",
   "odoo.com/security",
   "oen.tw/security",
@@ -2725,6 +2726,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-08T12:16:14+00:00",
- "last_full_sweep": "2026-11-08T12:16:14+00:00"
+ "last_program_sync": "2026-11-09T03:06:20+00:00",
+ "last_full_sweep": "2026-11-09T03:06:20+00:00"
 }
