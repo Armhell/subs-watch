@@ -1885,6 +1885,7 @@
   "immunefi.com/bug-bounty/marinade/information",
   "immunefi.com/bug-bounty/marsecosystem/information",
   "immunefi.com/bug-bounty/meth/information",
+  "immunefi.com/bug-bounty/metric/information",
   "immunefi.com/bug-bounty/moneyonchain/information",
   "immunefi.com/bug-bounty/mtpelerin/information",
   "immunefi.com/bug-bounty/nexusmutual/information",
@@ -2731,6 +2732,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-10T13:49:43+00:00",
- "last_full_sweep": "2026-11-10T13:49:43+00:00"
+ "last_program_sync": "2026-11-10T22:35:24+00:00",
+ "last_full_sweep": "2026-11-10T22:35:24+00:00"
 }
