@@ -2360,6 +2360,7 @@
   "prc.gov/vulnerability-disclosure-policy",
   "prc.network",
   "productsecurity.jnj.com",
+  "propfirmmatch.com/futures/bug-bounty/security-program",
   "proton.me/security/bug-bounty",
   "protonvpn.com/blog/bug-bounty-program",
   "proxidize.com/legal/vulnerability-disclosure-policy",
@@ -2728,6 +2729,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-09T14:26:08+00:00",
- "last_full_sweep": "2026-11-09T14:26:08+00:00"
+ "last_program_sync": "2026-11-10T00:52:53+00:00",
+ "last_full_sweep": "2026-11-10T00:52:53+00:00"
 }
