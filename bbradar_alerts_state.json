@@ -2569,6 +2569,7 @@
   "support.gitcoin.co/gitcoin-knowledge-base/misc/gitcoin-security-bounty-program",
   "support.kaspersky.com/vulnerability/report-a-vulnerability/12429",
   "support.knowledgeowl.com/help/vulnerability-disclosure-policy",
+  "support.nbx.com/hc/en-us/articles/360044264592-responsible-disclosure-policy",
   "support.playerauctions.com/hc/en-us/articles/49330305602585-playerauctions-bug-bounty-program",
   "support.plex.tv/articles/reporting-security-issues",
   "support.route4me.com/bug-bounty-program",
@@ -2613,6 +2614,7 @@
   "toddleapp.com/responsible-vulnerability-disclosure-policy",
   "todoist.com/bug-bounty",
   "toolglade.com/security-policy",
+  "topx.one/security/policy",
   "tothenew.com/responsible-disclosure",
   "tpo.group/vulnerability-disclosure",
   "traderfox.de/.well-known/bugbounty.txt",
@@ -2729,6 +2731,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-10T00:52:53+00:00",
- "last_full_sweep": "2026-11-10T00:52:53+00:00"
+ "last_program_sync": "2026-11-10T13:49:43+00:00",
+ "last_full_sweep": "2026-11-10T13:49:43+00:00"
 }
