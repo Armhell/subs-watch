@@ -2212,6 +2212,7 @@
   "mailchimp.com/about/security",
   "mailerz.net/digital-security",
   "mailstrom.co/vdp",
+  "make.com/bounty",
   "manual.bubble.io/vulnerability-disclosure-policy",
   "marketingportal.velux.co.uk/security.html",
   "marketingportal.velux.dk/security.html",
@@ -2233,6 +2234,7 @@
   "mlaify.io/security",
   "mollie.com/legal/responsible-disclosure",
   "mollie.com/responsible-disclosure",
+  "moneta.cz/bug-bounty",
   "moneykit.com/bounty",
   "mozilla.org/en-us/security/bug-bounty",
   "mozilla.org/en-us/security/client-bug-bounty",
@@ -2691,6 +2693,7 @@
   "web.archive.org/web/20220523183438/https:/uit.stanford.edu/security/bug-bounty",
   "webagentbridge.com/security",
   "webfiles.dti.delaware.gov/pdfs/pp/vulnerability%20disclosure%20policy.pdf",
+  "websec.net/responsible-disclosure",
   "website.whatfix.com/trust/vulnerability-disclosure-program",
   "webwork-tracker.com/security",
   "weglot.com/responsible-disclosure",
@@ -2732,6 +2735,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-10T22:35:24+00:00",
- "last_full_sweep": "2026-11-10T22:35:24+00:00"
+ "last_program_sync": "2026-11-11T12:59:53+00:00",
+ "last_full_sweep": "2026-11-11T12:59:53+00:00"
 }
