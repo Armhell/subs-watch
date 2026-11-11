@@ -140,6 +140,7 @@
   "bounties.cantina.xyz/cantina/bug-bounty",
   "bounty.decred.org",
   "bounty.mit.edu",
+  "bountyindex.in/scope/tesla.com",
   "brainfortsecurity.com/en/disclosure",
   "brandefense.io/responsible-disclosure",
   "breachsense.com/vulnerability-disclosure-policy",
@@ -2389,6 +2390,7 @@
   "r.xyz/program/clabs-celo",
   "r.xyz/program/pancakeswap",
   "r.xyz/program/tokemak",
+  "r.xyz/program/ufarm-digital",
   "r.xyz/program/usdfc-bug-bounty-by-secured-finance",
   "r.xyz/program/valantis-stex",
   "rackspace.com/information/legal/rsdp",
@@ -2735,6 +2737,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-11T12:59:53+00:00",
- "last_full_sweep": "2026-11-11T12:59:53+00:00"
+ "last_program_sync": "2026-11-11T23:44:40+00:00",
+ "last_full_sweep": "2026-11-11T23:44:40+00:00"
 }
