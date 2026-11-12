@@ -117,6 +117,7 @@
   "bentley.com/en/legal/bug-bounty-report",
   "bentley.com/legal/bug-bounty-report",
   "betterteam.com/bug-bounty",
+  "beyondmemory.io/security",
   "bezpieczenstwo.agh.edu.pl/en/vulnerability-disclosure-policy",
   "bingbong.de/vulnerability-disclosure-policy",
   "bio-key.com/vulnerability-reporting",
@@ -1018,6 +1019,14 @@
   "gobugfree.com/programs/thurgauer-kantonalbank-vdp",
   "gobugfree.com/programs/univote-vdp",
   "gobugfree.com/programs/ylah-vdp",
+  "gobugfree.com/public/engagements/abacus/abacus-research",
+  "gobugfree.com/public/engagements/bdo/bdo",
+  "gobugfree.com/public/engagements/fidentity-org/fidentity",
+  "gobugfree.com/public/engagements/gobugfree-org/bbh",
+  "gobugfree.com/public/engagements/llv/llv-pub",
+  "gobugfree.com/public/engagements/netplus-ch-sa-org/netplus",
+  "gobugfree.com/public/engagements/swissb-org/swissb",
+  "gobugfree.com/public/engagements/threema-org/threema",
   "gohumanfirst.com/security/coordinated-vulnerability-disclosure-policy",
   "gonitro.com/security-compliance/security/responsible-disclosure",
   "gov.bugcrowd.net/engagements/bugcrowd-mbb-og",
@@ -2738,6 +2747,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-12T04:26:00+00:00",
- "last_full_sweep": "2026-11-12T04:26:00+00:00"
+ "last_program_sync": "2026-11-12T14:01:56+00:00",
+ "last_full_sweep": "2026-11-12T14:01:56+00:00"
 }
