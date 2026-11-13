@@ -1101,6 +1101,7 @@
   "hackenproof.com/programs/near-protocol",
   "hackenproof.com/programs/near-smart-contracts-1",
   "hackenproof.com/programs/near-web",
+  "hackenproof.com/programs/noirwallet",
   "hackenproof.com/programs/okx",
   "hackenproof.com/programs/p2b-exchange",
   "hackenproof.com/programs/parity-polkadot-release-infrastructure",
@@ -2748,6 +2749,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-13T03:41:23+00:00",
- "last_full_sweep": "2026-11-13T03:41:23+00:00"
+ "last_program_sync": "2026-11-13T13:28:16+00:00",
+ "last_full_sweep": "2026-11-13T13:28:16+00:00"
 }
