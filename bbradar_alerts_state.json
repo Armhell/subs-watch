@@ -705,6 +705,7 @@
   "cantina.xyz/bounties/246de4d3-e138-4340-bdfc-fc4c95951491",
   "cantina.xyz/bounties/253a4e11-c99c-49e9-83f7-d076d8804475",
   "cantina.xyz/bounties/260585d8-a3e8-4d70-8077-b6f3f5f0391b",
+  "cantina.xyz/bounties/276fd65d-f84d-4be3-8e2a-88f1dc1cd959",
   "cantina.xyz/bounties/2acbecd1-3a5e-44fb-a324-a524c156d690",
   "cantina.xyz/bounties/31f19cea-dda2-4568-8f99-27dafd120c97",
   "cantina.xyz/bounties/32e64f2e-5f01-4a0b-bbe3-76f32c17b99f",
@@ -2722,6 +2723,7 @@
   "wingify.com/compliance/responsible-disclosure-policy",
   "winni.in/bug-bounty",
   "withsecure.com/en/about-us/vulnerability-reward-program",
+  "witivio.com/en/bug-bounty",
   "woodpecker.co/vulnerability-disclosure-program",
   "workbright.com/vulnerability-disclosure-policy",
   "workoutgen.app/security",
@@ -2749,6 +2751,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-13T13:28:16+00:00",
- "last_full_sweep": "2026-11-13T13:28:16+00:00"
+ "last_program_sync": "2026-11-13T22:56:13+00:00",
+ "last_full_sweep": "2026-11-13T22:56:13+00:00"
 }
