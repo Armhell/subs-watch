@@ -1176,6 +1176,7 @@
   "hackerone.com/amazonvrp",
   "hackerone.com/amitree_inc",
   "hackerone.com/anduril_industries",
+  "hackerone.com/anker",
   "hackerone.com/anthropic",
   "hackerone.com/anthropic-cyber-jailbreak",
   "hackerone.com/anywhererealestate",
@@ -2747,6 +2748,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-12T14:01:56+00:00",
- "last_full_sweep": "2026-11-12T14:01:56+00:00"
+ "last_program_sync": "2026-11-13T03:41:23+00:00",
+ "last_full_sweep": "2026-11-13T03:41:23+00:00"
 }
