@@ -1783,6 +1783,7 @@
   "homewizard.com/.well-known/vulnerability-disclosure-policy.pdf",
   "honeywell.com/us/en/legal/product-security",
   "hootsuite.com/security",
+  "hostafrica.co.za/security/vulnerability-disclosure",
   "hostafrica.com.gh/security/vulnerability-disclosure",
   "hostafrica.com/security/vulnerability-disclosure",
   "hrpartner.io/security.html",
@@ -2751,6 +2752,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-13T22:56:13+00:00",
- "last_full_sweep": "2026-11-13T22:56:13+00:00"
+ "last_program_sync": "2026-11-14T03:40:00+00:00",
+ "last_full_sweep": "2026-11-14T03:40:00+00:00"
 }
