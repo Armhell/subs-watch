@@ -2048,6 +2048,7 @@
   "intigriti.com/programs/intergamma/intergamma/detail",
   "intigriti.com/programs/intigriti/challenge0926/detail",
   "intigriti.com/programs/intigriti/challenge1026/detail",
+  "intigriti.com/programs/intigriti/challenge1126/detail",
   "intigriti.com/programs/intigriti/challengebrp/detail",
   "intigriti.com/programs/intigriti/intigriti/detail",
   "intigriti.com/programs/ivoai/ivovulnerabilitydisclosureprogram/detail",
@@ -2743,6 +2744,7 @@
   "xposedornot.com/hof",
   "yandex.ru/bugbounty/index",
   "yarbo.com/pages/bug-submission-process",
+  "yeswehack.com/programs/boursobank-bug-bounty-program",
   "york.ac.uk/it-services/about/policies/vulnerability-disclosure",
   "youware.com/security-vulnerability-reporting",
   "zaakpay.com/bug-bounty",
@@ -2755,6 +2757,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-16T03:18:23+00:00",
- "last_full_sweep": "2026-11-16T03:18:23+00:00"
+ "last_program_sync": "2026-11-16T14:03:03+00:00",
+ "last_full_sweep": "2026-11-16T14:03:03+00:00"
 }
