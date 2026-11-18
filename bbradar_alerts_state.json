@@ -190,6 +190,7 @@
   "bugbounty.bi.zone/companies/ispsystem/main",
   "bugbounty.bi.zone/companies/kaspersky/main",
   "bugbounty.bi.zone/companies/kuper/main",
+  "bugbounty.bi.zone/companies/magnit/main",
   "bugbounty.bi.zone/companies/max/main",
   "bugbounty.bi.zone/companies/mkb/main",
   "bugbounty.bi.zone/companies/my-target/main",
@@ -514,6 +515,7 @@
   "bugcrowd.com/engagements/netgear",
   "bugcrowd.com/engagements/newrelic-mbb-og-public",
   "bugcrowd.com/engagements/nextupai",
+  "bugcrowd.com/engagements/nord-security-mbb",
   "bugcrowd.com/engagements/northwestern-mutual-mbb-og",
   "bugcrowd.com/engagements/nubank",
   "bugcrowd.com/engagements/octopus-deploy",
@@ -878,6 +880,7 @@
   "docs.kinde.com/trust-center/security/vulnerability-disclosure-policy",
   "docs.mineos.ai/knowledge/reporting-vulnerability",
   "docs.obol.org/advanced-and-troubleshooting/security/bug-bounty",
+  "docs.onyx.org/reference/bug-bounty",
   "docs.opencollective.com/help/product/security",
   "docs.payabli.com/vulnerability-disclosure.md",
   "docs.probly.com/bug-bounty-program/program-policy",
@@ -1115,6 +1118,7 @@
   "hackenproof.com/programs/polkadot-bridge",
   "hackenproof.com/programs/polkadot-sdk-runtime-by-parity",
   "hackenproof.com/programs/poloniex-web-and-api",
+  "hackenproof.com/programs/quantova",
   "hackenproof.com/programs/redstone-smart-contracts",
   "hackenproof.com/programs/redstone-web",
   "hackenproof.com/programs/ref-finance-smart-contracts",
@@ -1805,6 +1809,7 @@
   "hunt.certik.com/explore/webacy",
   "hunt.certik.com/explore/wemix",
   "hunter.io/security-policy",
+  "huntr.com/challenges/2icsienajmsh0oamoghrbz/v1/rules",
   "huntr.com/challenges/4dre85bv2cu7drrxpxyiwt/v1/rules",
   "iceline-hosting.com/bug-bounty",
   "icinga.com/company/contact/security-issues",
@@ -2761,6 +2766,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-18T00:04:14+00:00",
- "last_full_sweep": "2026-11-18T00:04:14+00:00"
+ "last_program_sync": "2026-11-18T14:37:59+00:00",
+ "last_full_sweep": "2026-11-18T14:37:59+00:00"
 }
