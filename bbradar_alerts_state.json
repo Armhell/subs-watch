@@ -93,6 +93,7 @@
   "audits.sherlock.xyz/bug-bounties/425",
   "audits.sherlock.xyz/bug-bounties/433",
   "audits.sherlock.xyz/bug-bounties/437",
+  "audits.sherlock.xyz/bug-bounties/438",
   "audits.sherlock.xyz/bug-bounties/5",
   "audits.sherlock.xyz/bug-bounties/50",
   "audits.sherlock.xyz/bug-bounties/56",
@@ -2075,6 +2076,7 @@
   "intigriti.com/programs/ninjakiwigames/ninjakiwigames/detail",
   "intigriti.com/programs/nvidia/nvidiapublicbugbounty/detail",
   "intigriti.com/programs/nvidia/nvidiavdp/detail",
+  "intigriti.com/programs/onepassword/1passwordbugbountyprogram/detail",
   "intigriti.com/programs/orbia/orbiavdp/detail",
   "intigriti.com/programs/ourahealthoy/ouravulnerabilitydisclosureprogram/detail",
   "intigriti.com/programs/pdq/pdqcomprivate/detail",
@@ -2759,6 +2761,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-17T14:57:10+00:00",
- "last_full_sweep": "2026-11-17T14:57:10+00:00"
+ "last_program_sync": "2026-11-18T00:04:14+00:00",
+ "last_full_sweep": "2026-11-18T00:04:14+00:00"
 }
