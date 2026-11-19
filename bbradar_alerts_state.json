@@ -947,6 +947,7 @@
   "firo.org/guide/bounty-program.html",
   "first.org/about/bugs",
   "firstup.io/legal/vulnerability-disclosure",
+  "fjdynamics.com/de/bug-bounty-program",
   "flexa.co/security/bug-bounty-program",
   "flexion.us/vulnerability-reporting-policy",
   "flocksafety.com/legal/vulnerability-disclosure-policy",
@@ -1818,6 +1819,7 @@
   "ifixit.com/info/responsible_disclosure",
   "ignet.gov/vulnerability-disclosure-policy",
   "illumio.com/legal/responsible-disclosure-policy",
+  "immunefi.com/audit-competition/audit-comp-base-everest/information",
   "immunefi.com/audit-competition/plether/information",
   "immunefi.com/bug-bounty/0x/information",
   "immunefi.com/bug-bounty/1inch-aqua-improvement/information",
@@ -2475,6 +2477,7 @@
   "security.apple.com",
   "security.dapperlabs.com",
   "security.dji.com/en/guidelines",
+  "security.docs.choreolabs.com/en/latest/security-reporting/vulnerability-reporting-guidelines",
   "security.docs.wso2.com/en/latest/security-reporting/vulnerability-reporting-guidelines",
   "security.duke.edu/policies/responsible-disclosure",
   "security.kitabisa.com",
@@ -2766,6 +2769,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-18T14:37:59+00:00",
- "last_full_sweep": "2026-11-18T14:37:59+00:00"
+ "last_program_sync": "2026-11-19T23:55:51+00:00",
+ "last_full_sweep": "2026-11-19T23:55:51+00:00"
 }
