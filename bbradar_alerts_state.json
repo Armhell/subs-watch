@@ -1275,6 +1275,7 @@
   "hackerone.com/cornershop",
   "hackerone.com/cosmos",
   "hackerone.com/costco",
+  "hackerone.com/coupang",
   "hackerone.com/coupang_tw",
   "hackerone.com/coursera",
   "hackerone.com/creditkarma",
@@ -2769,6 +2770,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-19T23:55:51+00:00",
- "last_full_sweep": "2026-11-19T23:55:51+00:00"
+ "last_program_sync": "2026-11-20T14:25:59+00:00",
+ "last_full_sweep": "2026-11-20T14:25:59+00:00"
 }
