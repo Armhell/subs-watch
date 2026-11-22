@@ -2422,6 +2422,7 @@
   "r.xyz/program/ufarm-digital",
   "r.xyz/program/usdfc-bug-bounty-by-secured-finance",
   "r.xyz/program/valantis-stex",
+  "rabbitmart.com/security",
   "rackspace.com/information/legal/rsdp",
   "radiometer.com/en/about-radiometer/legal/coordinated-vulnerability-disclosure",
   "rangde.in/bug-bounty-program",
@@ -2770,6 +2771,6 @@
   "zweiradteile.net/.well-known/security/policy.html"
  ],
  "baseline_done": true,
- "last_program_sync": "2026-11-20T14:25:59+00:00",
- "last_full_sweep": "2026-11-20T14:25:59+00:00"
+ "last_program_sync": "2026-11-22T13:38:55+00:00",
+ "last_full_sweep": "2026-11-22T13:38:55+00:00"
 }
